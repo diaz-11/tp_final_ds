@@ -1,0 +1,17 @@
+ {% block header %}
+<h1>{% block title %}---{% endblock %}</h1>
+ {% endblock %} {% block content %} {% for track in track %}
+<article class="track">
+  <header>
+    <div>
+      <h1>{{ track['title'] }}</h1>
+      <div class="about">
+        by {{ track['username'] }} 
+      </div>
+    </div>
+  </header>
+  <p class="body">{{ track['body'] }}</p>
+</article>
+
+<hr />
+{% endfor %} {% endblock %}
