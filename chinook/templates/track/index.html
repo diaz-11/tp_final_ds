@@ -1,0 +1,12 @@
+ {% block header %}
+<h1>{% block title %}---{% endblock %}</h1>
+ {% endblock %} {% block content %} 
+ 
+<ul>
+ {% for track in tracks %}
+<li>
+      <h1>{{ track['name'] }}</h1>
+</li>
+{% endfor %} 
+</ul>
+{% endblock %}
