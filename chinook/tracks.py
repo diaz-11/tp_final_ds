@@ -5,15 +5,15 @@ from werkzeug.exceptions import abort
 
 from chinook.db import get_db
 
-bp = Blueprint('tracks', __name__, url_prefix="/tracks")
+bp = Blueprint('track', __name__, url_prefix="/track")
 
 @bp.route('/')
 def index():
     db = get_db()
-    track = db.execute(
-       """SELECT
-            FROM JOIN  ON 
-         ORDER BY  DESC"""
+    tracks = db.execute(
+       """SELECT name
+            FROM tracks
+         ORDER BY name ASC"""
     ).fetchall()
-    return render_template('track/index.html', track=track)
+    return render_template('track/index.html', tracks=tracks)
 
