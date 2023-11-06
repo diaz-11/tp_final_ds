@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, render_template_string
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -36,7 +36,7 @@ def create_app(test_config=None):
     app.register_blueprint(tracks.bp)
     app.add_url_rule("/", "track.index")
 
-    @app.route('/hello')
+    @app.route('/')
     def principal():
         return render_template("base.html")
 
