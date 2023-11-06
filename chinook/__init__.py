@@ -34,6 +34,7 @@ def create_app(test_config=None):
 
     from . import tracks
     app.register_blueprint(tracks.bp)
+    app.add_url_rule("/", "track.index")
 
     @app.route('/hello')
     def principal():
