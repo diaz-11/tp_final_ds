@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}---{% endblock %}</h1>
+{% endblock %} {% block content %} 
+
+<ul>
+  {% for album in albums %}
+ <li>
+       <h1>{{ album['title'] }}</h1>
+ </li>
+ {% endfor %} 
+ </ul>
+ {% endblock %}
+ 
