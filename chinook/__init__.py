@@ -32,8 +32,10 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-    from . import tracks
+    from . import tracks, album, artists
     app.register_blueprint(tracks.bp)
+    app.register_blueprint(album.bp)
+    app.register_blueprint(artists.bp)
     app.add_url_rule("/", "track.index")
 
     @app.route('/')
