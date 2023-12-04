@@ -38,11 +38,11 @@ def create_app(test_config=None):
 
     from . import album
     app.register_blueprint(album.bp)
-    app.add_url_rule("/",endpoint= "track.index")
+    app.add_url_rule("/",endpoint= "albums.index")
 
     from . import artists
     app.register_blueprint(artists.bp)
-    app.add_url_rule("/",endpoint= "track.index")
+    app.add_url_rule("/",endpoint= "artist.index")
 
     @app.route('/')
     def principal():
