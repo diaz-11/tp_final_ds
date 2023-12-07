@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
-{% block header %}
+ {% block header %}
 <h1>{% block title %}---{% endblock %}</h1>
  {% endblock %} {% block content %} 
- 
-<ul>
- {% for artist in artists %}
-<li>
-      <h1>{{ artist['name'] }}</h1>
-</li>
-{% endfor %} 
+      <h1>{{ track['name'] }}</h1>
 </ul>
 {% endblock %}
