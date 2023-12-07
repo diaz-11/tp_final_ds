@@ -4,12 +4,12 @@
 <h1>{% block title %}{{ artist['artista'] }}{% endblock %}</h1>
 {% endblock %} 
 {% block content %} 
-{% if albums|length == 0 %}
-<span>sin discos</span>
-{% else %}    
-{% for a in albums %}
-<p>{{ a['disco'] }}</p>
 
+
+{% for a in albums %}
+<p>{{ a[''] }}</p>
+<p>{{ a[''] }}</p>
+<p>{{ a[''] }}</p>
+<p>{{ a[''] }}</p>
 {% endfor %}
-{% endif %}    
- {% endblock %}
+{% endif %}{% endblock %}
