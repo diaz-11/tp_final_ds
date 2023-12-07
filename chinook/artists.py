@@ -11,12 +11,21 @@ bp = Blueprint('artist', __name__,url_prefix='/artist')
 def index():
     db = get_db()
     artists = db.execute(
-        """SELECT tracks.Name , albums.Title, artists.Name
-        FROM tracks 
-        JOIN albums 
-        ON albums.AlbumId = tracks.AlbumId
-        JOIN artists 
-        ON albums.ArtistId = artists.ArtistId
-        ORDER BY artists.Name ASC"""
+        """SELECT name, artistId
+        FROM artists 
+        ORDER BY Name ASC"""
     ).fetchall()
     return render_template('artists/index.html', artists=artists)
+
+
+@bp.route('/<int:id>')
+def detalle(id):   
+    db = get_db()
+    artist = db.execute(
+       """SELECT ar.Name AS artista 
+         FROM artists ar
+         WHERE ar.ArtistId = ?""",
+         (id,)
+    ).fetchone()
+    return render_template('artist/detalle.html', artist=artist)
+

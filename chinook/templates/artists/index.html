@@ -6,8 +6,8 @@
 <ul>
  {% for artist in artists %}
 <li>
-      <a href="{{ url_for('track.detalle', id=track['trackId']) }}">
-      <h1>{{ artist['name'] }}</h1>
+      <a href="{{ url_for('artist.detalle', id=artist['artistId']) }}">
+      <h1>{{ artist['name'] }}</h1></a>
 </li>
 {% endfor %} 
 </ul>
