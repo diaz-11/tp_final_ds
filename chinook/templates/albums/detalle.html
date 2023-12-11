@@ -5,11 +5,11 @@
 <h1>{% block title %}{{ album['album'] }}{% endblock %}</h1>
 {% endblock %} 
 {% block content %} 
- {% for t in tracksi %}
- <p>{{ t['nombre'] }}</p>
-<p>{{ t['genero'] }}</p>
-<p>{{ t['Composer'] }}</p>
-<p>{{ t['Milliseconds'] }} Milliseconds</p>
-<p>{{ t['Bytes'] }} Bytes</p>
-<p id="espacio">{{ t['UnitPrice'] }}</p>
-{% endfor %}  {% endblock %}
+
+ <p>{{ track['nombre'] }}</p>
+<p>{{ track['genero'] }}</p>
+<p>{{ track['Composer'] }}</p>
+<p>{{ track['Milliseconds'] }} Milliseconds</p>
+<p>{{ track['Bytes'] }} Bytes</p>
+<p>{{ track['UnitPrice'] }}</p>
+ {% endblock %}
