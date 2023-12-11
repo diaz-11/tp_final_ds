@@ -19,13 +19,22 @@ def index():
 
 
 @bp.route('/<int:id>')
-def detalle(id):   
+def detalle(id):    
     db = get_db()
     artist = db.execute(
-       """SELECT ar.Name AS artista 
-         FROM artists ar
-         WHERE ar.ArtistId = ?""",
+       """SELECT ar.Name AS artista,
+         FROM artists a
+         WHERE a.ArtistId = ?""",
          (id,)
     ).fetchone()
     return render_template('artist/detalle.html', artist=artist)
 
+@bp.route('/<int:id>')
+def detalle(id):    
+    db = get_db()
+    artist = db.execute(
+       """SELECT a.Title AS disco FROM albums a
+         WHERE a.ArtistId = ?""",
+         (id,)
+    ).fetchone()
+    return render_template('artist/detalle.html', artist=artist)
