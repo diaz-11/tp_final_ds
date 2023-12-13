@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='stail.css') }}" />
 {% extends 'base.html' %}
 {% block header %}
 <h1>{% block title %}---{% endblock %}</h1>
@@ -6,8 +7,8 @@
 <ul>
   {% for album in albums %}
  <li>
-      <a href="{{ url_for('album.detalle', id=album['albumId']) }}">
-       <h1>{{ album['title'] }}</h1></a>
+      <a href="{{ url_for('album.detalle', id=album['id']) }}">
+       <h1>{{ album['album'] }}</h1></a>
  </li>
  {% endfor %} 
  </ul>

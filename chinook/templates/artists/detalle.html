@@ -4,11 +4,15 @@
 <h1>{% block title %}{{ artist['artista'] }}{% endblock %}</h1>
 {% endblock %} 
 {% block content %} 
-
-<p>{{ ['nombre'] }}</p>
-<p>{{ ['genero'] }}</p>
-<p>{{ ['Composer'] }}</p>
-<p>{{['Milliseconds'] }} Milliseconds</p>
-<p>{{ ['Bytes'] }} Bytes</p>
+<p>
+<ul>
+    {% for disco in discos %}
+   <li>
+        <a href="{{ url_for('album.detalle', id=album['id']) }}">
+         <h1>{{ disco['disco'] }}</h1></a>
+   </li>
+   {% endfor %} 
+   </ul>
+</p>
 
 {% endblock %}
