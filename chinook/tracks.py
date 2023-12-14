@@ -19,7 +19,7 @@ def index():
 
 @bp.route('/<int:id>')
 def detalle(id):
-    db = get_db()
+    db  = get_db()
     track = db.execute(
        """SELECT g.Name AS genero, a.Title AS album,ar.Name AS artista,t.Milliseconds,t.Bytes, t.UnitPrice
             FROM tracks t 
@@ -29,7 +29,5 @@ def detalle(id):
             WHERE t.TrackId = ?""",
          (id,)
     ).fetchone()
-
-    
     return render_template('track/detalle.html', track=track)
 
